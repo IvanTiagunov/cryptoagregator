@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-import models, schemas
+from . import models, schemas
 
 
 def get_news_by_title(db: Session, title: str):

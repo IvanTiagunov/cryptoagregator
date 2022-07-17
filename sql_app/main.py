@@ -1,9 +1,9 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-import crud
-from crud import *
-from database import SessionLocal, engine
+from . import crud
+from . import models,schemas
+from .database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -51,7 +51,7 @@ def update_news_by_id(news_id: int, new_news: schemas.NewsUpdate, db: Session = 
 def delete_news_by_id(news_id: int, db: Session = Depends(get_db)):
     # checks if news already exists
     checked_news = read_news_by_id(news_id=news_id, db=db)
-    return crud.delete_news_by_id(db, news = checked_news)
+    return crud.delete_news_by_id(db, news=checked_news)
 
 
 
