@@ -8,4 +8,4 @@
 
 Реализованы методы get, post, patch и delete. Их описание можно найти в файле sql_app.main.
 
-Работа выложена на deta.
+Работа выложена на deta по адресу https://6dnxpb.deta.dev/docs
